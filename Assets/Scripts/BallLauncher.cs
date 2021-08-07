@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BallLauncher : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class BallLauncher : MonoBehaviour
     private List<Ball> _balls = new List<Ball>();
     private int _ballsReady;
     private BlockSpawner _blockSpawner;
+    private ScoreManager _scoreManager;
 
     [SerializeField] private Ball ballPrefab;
 
     private void Awake()
     {
+        _scoreManager = FindObjectOfType<ScoreManager>();
         _blockSpawner = FindObjectOfType<BlockSpawner>();
         _launchPreview = GetComponent<LaunchPreview>();
         CreateBall();
@@ -25,6 +28,8 @@ public class BallLauncher : MonoBehaviour
 
     private void CreateBall()
     {
+        _scoreManager.AddScore(1);
+
         var ball = Instantiate(ballPrefab);
         _balls.Add(ball);
         _ballsReady++;
@@ -33,7 +38,6 @@ public class BallLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back * -10;
         
         if (Input.GetMouseButtonDown(0)) // ekrana tıklandı ise
