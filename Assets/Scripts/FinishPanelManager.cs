@@ -21,11 +21,6 @@ public class FinishPanelManager : MonoBehaviour
         
     }
 
-    public void RetryGame()
-    {
-        _levelManager.RestartScene();
-    }
-
     /**
      * Gerekli bilgileri ilgili uilara yerlestirir
      */

@@ -30,12 +30,18 @@ public class Block : MonoBehaviour
         SetGameFinish();
     }
 
+    /**
+     * Küplerin görünüşlerini güncelleme
+     */
     private void UpdateVisualState()
     {
         _text.SetText(_hitsRemaining.ToString());
         _spriteRenderer.color = Color.Lerp(Color.white, Color.red, _hitsRemaining / 10f);
     }
 
+    /**
+     * Toplar küplere çarptıkça oluşacak değişimler
+     */
     private void OnCollisionEnter2D(Collision2D other)
     {
         _hitsRemaining--;
@@ -45,6 +51,9 @@ public class Block : MonoBehaviour
             Destroy(gameObject);
     }
     
+    /**
+     * Küplere çarptığında hitler set edilir
+     */
     internal void SetHits(int hits)
     {
         _hitsRemaining = hits;

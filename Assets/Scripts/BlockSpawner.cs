@@ -21,6 +21,9 @@ public class BlockSpawner : MonoBehaviour
         }
     }
 
+    /**
+     * Küpleri sahne de random şekilde spawn eder
+     */
     public void SpawnRowOfBlocks()
     {
         foreach (var block in _blockSpawned)
@@ -47,6 +50,9 @@ public class BlockSpawner : MonoBehaviour
         _rowSpawned++;
     }
 
+    /**
+     * Küpün pozisyonunu döndürür
+     */
     private Vector3 GetPosition(int i)
     {
         Vector3 position = transform.position;

@@ -18,6 +18,6 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rigidbody2D.velocity = _rigidbody2D.velocity.normalized * moveSpeed;
+        _rigidbody2D.velocity = _rigidbody2D.velocity.normalized * moveSpeed; // top hareketi
     }
 }

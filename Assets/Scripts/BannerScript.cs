@@ -8,9 +8,11 @@ public class BannerScript : MonoBehaviour
 {
     private BannerView _banner;
 
-    public String _bannerID = "ca-app-pub-3940256099942544/6300978111";
+    public String _bannerID = "ca-app-pub-3940256099942544/6300978111"; // test idsi kullanılmıştır
 
-    // Start is called before the first frame update
+    /**
+     * Reklam oluşturup gösterme
+     */
     void Start()
     {
         _banner = new BannerView(_bannerID, AdSize.Banner, AdPosition.Bottom);

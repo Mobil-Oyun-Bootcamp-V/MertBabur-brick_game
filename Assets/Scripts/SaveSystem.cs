@@ -5,6 +5,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
+    /**
+     * Oyunu kaydeder
+     */
     public static void SavePlayer(int bestScore)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -17,6 +20,9 @@ public static class SaveSystem
         stream.Close();
     }
 
+    /**
+     * Oyunu yükler
+     */
     public static PlayerData LoadPlayer()
     {
         string path = Application.persistentDataPath + "/player.fun";

@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] public int score = 0;
     
+    /**
+     * Her adımdan sonra skoru günceller
+     */
     public void AddScore(int amount)
     {
         score += amount;

@@ -27,6 +27,9 @@ public class BallLauncher : MonoBehaviour
         CreateBall();
     }
 
+    /**
+     * Topları oluşturma ve skor ekleme
+     */
     private void CreateBall()
     {
         _scoreManager.AddScore(1);
@@ -56,6 +59,9 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    /**
+     * İlk ok çekildiğinde
+     */
     private void StartDrag(Vector3 worldPosition)
     {
         _startDragPosition = worldPosition;
@@ -63,6 +69,9 @@ public class BallLauncher : MonoBehaviour
         
     }
 
+    /**
+     * Ok çekilmeye devam edildiğinde
+     */
     private void ContinueDrag(Vector3 worldPosition)
     {
         _endDragPosition = worldPosition;
@@ -75,6 +84,9 @@ public class BallLauncher : MonoBehaviour
         StartCoroutine(LaunchBalls());
     }
 
+    /**
+     * Top oluşturma
+     */
     private IEnumerator LaunchBalls()
     {
         Vector3 direction = _endDragPosition - _startDragPosition;
@@ -92,7 +104,10 @@ public class BallLauncher : MonoBehaviour
         _ballsReady = 0;
 
     }
-
+    
+    /**
+     * Toplar başlangıca geri döndüğünde olacaklar.
+     */
     public void ReturnBall()
     {
         _ballsReady++;

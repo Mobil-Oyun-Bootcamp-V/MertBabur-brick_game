@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isFinishGame && _counterBool == 0)
+        if (_isFinishGame && _counterBool == 0) // oyun bitti true ise ve counter 0 ise
         {
             _counterBool++;
             FinishGame();
@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
         
     }
 
+    /**
+     * Oyun bittiğinde olacaklar
+     */
     private void FinishGame()
     {
         finishPanel.SetActive(true);

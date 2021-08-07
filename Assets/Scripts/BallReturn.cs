@@ -12,13 +12,12 @@ public class BallReturn : MonoBehaviour
         _ballLauncher = FindObjectOfType<BallLauncher>();
     }
 
+    /**
+     * Toplar geri döndüğünde görünümleri kapanır 
+     */
     private void OnCollisionEnter2D(Collision2D other)
     {
         _ballLauncher.ReturnBall();
         other.collider.gameObject.SetActive(false);
-        if (other.gameObject.CompareTag("Block"))
-        {
-            Debug.Log("Bitti");
-        }
     }
 }
