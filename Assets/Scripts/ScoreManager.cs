@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
 
-    [SerializeField] private int score = 0;
+    [SerializeField] public int score = 0;
     
     public void AddScore(int amount)
     {

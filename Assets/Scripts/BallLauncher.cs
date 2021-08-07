@@ -18,6 +18,7 @@ public class BallLauncher : MonoBehaviour
 
     [SerializeField] private Ball ballPrefab;
 
+    public int counter = 0;
     private void Awake()
     {
         _scoreManager = FindObjectOfType<ScoreManager>();
@@ -29,6 +30,7 @@ public class BallLauncher : MonoBehaviour
     private void CreateBall()
     {
         _scoreManager.AddScore(1);
+        counter++;
 
         var ball = Instantiate(ballPrefab);
         _balls.Add(ball);

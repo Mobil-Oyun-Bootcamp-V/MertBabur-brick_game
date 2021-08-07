@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 3343680046067940774}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,3 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6463a09a2c2753f4ba47d6bee0284b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballReturn: {fileID: 4376932876876085155, guid: 505b7a7b138dbb9479d78c4c79ad7501,
+    type: 3}
+  gameFinishDistance: 1

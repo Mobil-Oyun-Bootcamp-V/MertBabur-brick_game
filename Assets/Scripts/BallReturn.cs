@@ -16,5 +16,9 @@ public class BallReturn : MonoBehaviour
     {
         _ballLauncher.ReturnBall();
         other.collider.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Block"))
+        {
+            Debug.Log("Bitti");
+        }
     }
 }

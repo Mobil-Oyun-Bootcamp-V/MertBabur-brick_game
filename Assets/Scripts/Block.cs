@@ -6,17 +6,28 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField] private Transform ballReturn;
+    private float gameFinishDistance = 2f;
+    
     private int _hitsRemaining = 5;
     
     private SpriteRenderer _spriteRenderer;
     private TextMeshPro _text;
 
+    private GameManager _gameManager;
+
     // Start is called before the first frame update
     void Awake()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _text = GetComponentInChildren<TextMeshPro>();
         UpdateVisualState();
+    }
+
+    private void Update()
+    {
+        SetGameFinish();
     }
 
     private void UpdateVisualState()
@@ -38,6 +49,20 @@ public class Block : MonoBehaviour
     {
         _hitsRemaining = hits;
         UpdateVisualState();
+    }
+
+    /**
+     * BallReturn ile son küp arasında uzaklığa göre oyunu bitirir
+     */
+    private void SetGameFinish()
+    {
+        float distance = Vector2.Distance(transform.position, ballReturn.position);
+        Debug.Log(distance);
+        if (distance < gameFinishDistance)
+        {
+            _gameManager._isFinishGame = true;
+        }
+
     }
     
 }
